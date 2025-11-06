@@ -137,7 +137,7 @@ export const useBuilderStore = create((set) => ({
   updateProduct: (id, updates) =>
     set((state) => ({
       products: state.products.map((p) =>
-        p.id === id ? { ...p, ...updates } : p,
+        p.id === id ? { ...p, ...updates } : p
       ),
     })),
 
@@ -167,7 +167,7 @@ export const useBuilderStore = create((set) => ({
           cart: state.cart.map((item) =>
             item.id === product.id
               ? { ...item, quantity: item.quantity + 1 }
-              : item,
+              : item
           ),
         };
       }
@@ -187,7 +187,7 @@ export const useBuilderStore = create((set) => ({
         .map((item) =>
           item.id === productId
             ? { ...item, quantity: Math.max(0, quantity) }
-            : item,
+            : item
         )
         .filter((item) => item.quantity > 0),
     })),
